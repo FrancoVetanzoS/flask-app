@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Registrar Informes de Ensayos de Emulsiones:</title>
+</head>
+<body>
+<div class="container">
+    <h1>Registrar Informe de Ensayo de Emulsión</h1><br>
+    <form method="POST">
+
+        Lote:
+        <input type="text" name="Lote" required><br><br>
+        Residuo Asfáltico:
+        <input type="number" name="RA" step=any required><br><br>
+        Viscosidad:
+        <input type="number" name="Viscosidad" step=any required><br><br>
+        Tamiz:
+        <input type="number" name="Tamiz" step=any required><br><br>
+        Penetración:
+        <input type="number" name="Penetracion" step=any required><br><br>
+
+
+        <button type="submit">Guardar</button>
+        <a href="{{ url_for('ie') }}">
+            <button type="button">Cancelar</button>
+        </a>
+
+    </form>
+</div>
+</body>
+</html>

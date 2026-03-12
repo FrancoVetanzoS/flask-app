@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Ordenes de Producción</title>
+</head>
+<body>
+   <div class="container">
+
+        <h1>Registro de Ordenes de Produccion</h1>
+        <a href="{{url_for('nuevoop')}}">
+            <button>Nuevo Registro</button>
+        </a>
+
+        <a href="{{url_for('home')}}">
+            <button type="button">Volver a inicio</button>
+        </a><br><br>
+
+        <form method="GET">
+            <label>Filtrar por Fecha:</label>
+            <input type="date" name="fecha">
+            <label>Filtrar por Lote:</label>
+            <input type="text" name="Lote">
+            <button type="submit">Filtrar</button>
+            <a href="{{ url_for('op') }}">
+                <button type="button">Limpiar</button>
+            </a>
+        </form>
+
+
+        <table border="1">
+            <tr>
+                <th>Lote</th>
+                <th>Codigo de Asfalto Empleado</th>
+                <th>Tipo de Emulsion</th>
+                <th>Fecha de Producción</th>
+            </tr>
+            {% for d in datos %}
+            <tr>
+                <td>{{d.Lote}}</td>
+                <td>{{d.Cod_MP}}</td>
+                <td>{{d.Tipo}}</td>
+                <td>{{d.fecha}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+   </div> 
+</body>
+</html>

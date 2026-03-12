@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Registrar Control de Calidad de Emulsiones Producidas:</title>
+</head>
+<body>
+<div class="container">
+    <H1>Registrar Control de Calidad de Emulsiones</H1><br>
+    <form method="POST">
+
+        Lote:
+        <input type="text" name="Lote" required><br><br>
+        Nro de muestra:
+        <input type="number" name="Nro" step=1 required><br><br>
+        Residuo Asfáltico:
+        <input type="number" name="RA" step=any required><br><br>
+        Viscosidad:
+        <input type="number" name="Viscosidad" step=any required><br><br>
+        Tamiz:
+        <input type="number" name="Tamiz" step=any required><br><br>
+
+
+        <button type="submit">Guardar</button>
+        <a href="{{ url_for('cc') }}">
+            <button type="button">Cancelar</button>
+        </a>
+
+    </form>
+</div>
+</body>
+</html>

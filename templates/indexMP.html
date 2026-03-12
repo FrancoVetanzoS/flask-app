@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Asfalto - Materia Prima</title>
+</head>
+<body>
+   <div class="container">
+
+        <h1>Registro de Asfaltos como Materia Prima</h1>
+        <a href="{{url_for('nuevomp')}}">
+            <button>Nuevo Registro</button>
+        </a>
+
+        <a href="{{url_for('home')}}">
+            <button type="button">Volver a inicio</button>
+        </a><br><br>
+
+        <form method="GET">
+            <label>Filtrar por Fecha:</label>
+            <input type="date" name="fecha">
+            <button type="submit">Filtrar</button>
+            <a href="{{ url_for('mp') }}">
+                <button type="button">Limpiar</button>
+            </a>
+        </form>
+
+
+        <table border="1">
+            <tr>
+                <th>Codigo</th>
+                <th>Fecha Ingreso</th>
+                <th>Tipo de PEN</th>
+            </tr>
+            {% for d in datos %}
+            <tr>
+                <td>{{d.Cod_MP}}</td>
+                <td>{{d.fecha}}</td>
+                <td>{{d.PEN}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+   </div> 
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Informes de Ensayos de Emulsiones</title>
+</head>
+<body>
+   <div class="container">
+        <h1>Registro de Informes de Ensayos de Emulsiones</h1>
+        <a href="{{url_for('nuevoie')}}">
+            <button>Nuevo Registro</button>
+        </a>
+
+        <a href="{{url_for('home')}}">
+            <button type="button">Volver a inicio</button>
+        </a><br><br>
+
+        <form method="GET">
+            <label>Filtrar por Lote:</label>
+            <input type="text" name="Lote">
+            <button type="submit">Filtrar</button>
+
+            <a href="{{ url_for('ie') }}">
+                <button type="button">Limpiar</button>
+            </a>
+        </form>
+
+
+        <table border="1">
+            <tr>
+                <th>Lote</th>
+                <th>Residuo Asfaltico</th>
+                <th>Viscosidad</th>
+                <th>Tamiz</th>
+                <th>Penetracion</th>
+            </tr>
+            {% for d in datos %}
+            <tr>
+                <td>{{d.Lote}}</td>
+                <td>{{d.RA}}</td>
+                <td>{{d.Viscosidad}}</td>
+                <td>{{d.Tamiz}}</td>
+                <td>{{d.Penetracion}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+   </div> 
+</body>
+</html>

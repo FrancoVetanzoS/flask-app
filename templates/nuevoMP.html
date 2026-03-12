@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <h1>Registrar Asfalto suministrado:</h1><br>
+    <form method="POST">
+
+        Codigo MP:
+        <input type="text" name="codigomp" required><br><br>
+        Fecha de Ingreso:
+        <input type="date" name="fecha"required><br><br>
+        Tipo de Pen:
+        <input type="text" name="PEN" required><br><br>    
+
+        <button type="submit">Guardar</button>
+        <a href="{{ url_for('mp') }}">
+            <button type="button">Cancelar</button>
+        </a>
+
+    </form>
+</div>
+</body>
+</html>
